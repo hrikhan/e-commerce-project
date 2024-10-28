@@ -1,39 +1,56 @@
+class TextString {
+  // Onboarding Texts
+  static const String onboardingTitle1 = "Welcome to Our App";
+  static const String onboardingSubtitle1 = "Discover the best experiences around you.";
+  static const String onboardingTitle2 = "Stay Connected";
+  static const String onboardingSubtitle2 = "Connect with friends and family effortlessly.";
+  static const String onboardingTitle3 = "Explore Opportunities";
+  static const String onboardingSubtitle3 = "Unlock new experiences and opportunities.";
 
+  // Login Page Texts
+  static const String loginTitle = "Welcome Back!";
+  static const String loginSubtitle = "Please sign in to continue.";
+  static const String loginEmailHint = "Enter your email";
+  static const String loginPasswordHint = "Enter your password";
+  static const String loginButton = "Login";
+  static const String loginForgotPassword = "Forgot Password?";
+  static const String loginSignUpPrompt = "Don't have an account? Sign Up";
 
-class AppSizes {
-  // Private constructor to prevent instantiation
-  AppSizes._();
+  // Sign-Up Page Texts
+  static const String signUpTitle = "Create an Account";
+  static const String signUpSubtitle = "Join us to start exploring!";
+  static const String signUpNameHint = "Enter your name";
+  static const String signUpEmailHint = "Enter your email";
+  static const String signUpPasswordHint = "Create a password";
+  static const String signUpButton = "Sign Up";
+  static const String signUpLoginPrompt = "Already have an account? Login";
 
-  // Padding and Margin Sizes
-  static const double paddingSmall = 8.0;
-  static const double paddingMedium = 16.0;
-  static const double paddingLarge = 24.0;
-  static const double paddingExtraLarge = 32.0;
+  // Home Page Texts
+  static const String homeTitle = "Welcome Home!";
+  static const String homeSubtitle = "Explore the latest updates and news.";
+  static const String homeSearchHint = "Search for items, places, etc.";
 
-  static const double marginSmall = 8.0;
-  static const double marginMedium = 16.0;
-  static const double marginLarge = 24.0;
-  static const double marginExtraLarge = 32.0;
+  // Profile Page Texts
+  static const String profileTitle = "My Profile";
+  static const String profileEditButton = "Edit Profile";
+  static const String profileLogoutButton = "Logout";
 
-  // Font Sizes
-  static const double fontSmall = 12.0;
-  static const double fontMedium = 16.0;
-  static const double fontLarge = 20.0;
-  static const double fontExtraLarge = 24.0;
+  // General Buttons and Labels
+  static const String continueButton = "Continue";
+  static const String submitButton = "Submit";
+  static const String cancelButton = "Cancel";
+  static const String yesButton = "Yes";
+  static const String noButton = "No";
 
-  // Icon Sizes
-  static const double iconSmall = 16.0;
-  static const double iconMedium = 24.0;
-  static const double iconLarge = 32.0;
-  static const double iconExtraLarge = 40.0;
+  // Error Messages
+  static const String errorNetwork = "Network error. Please check your connection.";
+  static const String errorInvalidEmail = "Invalid email address";
+  static const String errorEmptyField = "This field cannot be empty";
+  static const String errorPasswordMismatch = "Passwords do not match";
+  static const String errorGeneral = "Something went wrong. Please try again.";
 
-  // Button Heights
-  static const double buttonHeightSmall = 36.0;
-  static const double buttonHeightMedium = 48.0;
-  static const double buttonHeightLarge = 60.0;
-
-  // Border Radius
-  static const double borderRadiusSmall = 8.0;
-  static const double borderRadiusMedium = 16.0;
-  static const double borderRadiusLarge = 24.0;
+  // Success Messages
+  static const String successSignup = "Account created successfully!";
+  static const String successLogin = "Login successful!";
+  static const String successProfileUpdate = "Profile updated successfully!";
 }

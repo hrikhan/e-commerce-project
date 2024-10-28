@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_24/utils/theme/texttheme.dart';
+
+import 'package:shop_bd/utils/theme/texttheme.dart';
 
 class Themeedata {
   Themeedata._();

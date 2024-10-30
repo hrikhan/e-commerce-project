@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-
 class HelperFunction {
   // A function to get a color based on a string value
   static Color? getColor(String value) {
@@ -38,8 +37,12 @@ class HelperFunction {
   static Showalart(String tittle, String massage) {}
   static navigatetootherscreen() {}
   static trancatetext() {}
+
   static Size screensize() {
     return MediaQuery.of(Get.context!).size;
+  }
 
+  static bool isdark(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark;
   }
 }

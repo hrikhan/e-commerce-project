@@ -36,4 +36,10 @@ class AppSizes {
   static const double borderRadiusSmall = 8.0;
   static const double borderRadiusMedium = 16.0;
   static const double borderRadiusLarge = 24.0;
+
+
+  //default spacing
+   static const double spacebetweenitem = 16.0;
+
+
 }

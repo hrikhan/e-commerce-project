@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
 
 class HelperFunction {
   // A function to get a color based on a string value
@@ -29,18 +32,14 @@ class HelperFunction {
         return Colors.transparent; // Default color if input doesn't match
     }
   }
-  static customsnakebar(String massage){
+
+  static customsnakebar(String massage) {}
+
+  static Showalart(String tittle, String massage) {}
+  static navigatetootherscreen() {}
+  static trancatetext() {}
+  static Size screensize() {
+    return MediaQuery.of(Get.context!).size;
 
   }
-
-  static Showalart(String tittle ,String massage){
-
-  }
-  static navigatetootherscreen(){
-
-  }
- static trancatetext(){
-
- }
- 
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_bd/utils/constant/colors.dart';
+import 'package:get/get.dart';
+import 'package:shop_bd/features/authintication/controllers/onboarding_controller.dart';
 import 'package:shop_bd/utils/constant/image.dart';
 import 'package:shop_bd/utils/constant/size.dart';
 import 'package:shop_bd/utils/constant/text_string.dart';
@@ -11,27 +12,32 @@ class Onboarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controllar = Get.put(OnboardingController());
     return Scaffold(
       body: Stack(
         children: [
           //horizontal page view
-          PageView(children: const [
-            onboarding_widgets(
-              image: images.onboard1,
-              title: TextString.onboardingSubtitle1,
-              subtitle: TextString.onboardingSubtitle1,
-            ),
-            onboarding_widgets(
-              image: images.onboard2,
-              title: TextString.onboardingTitle2,
-              subtitle: TextString.onboardingSubtitle2,
-            ),
-            onboarding_widgets(
-              image: images.onboard3,
-              title: TextString.onboardingTitle3,
-              subtitle: TextString.onboardingSubtitle3,
-            )
-          ]),
+
+          PageView(
+              controller: controllar.pageController,
+              onPageChanged: controllar.pageindicator,
+              children: const [
+                onboarding_widgets(
+                  image: images.onboard1,
+                  title: TextString.onboardingSubtitle1,
+                  subtitle: TextString.onboardingSubtitle1,
+                ),
+                onboarding_widgets(
+                  image: images.onboard2,
+                  title: TextString.onboardingTitle2,
+                  subtitle: TextString.onboardingSubtitle2,
+                ),
+                onboarding_widgets(
+                  image: images.onboard3,
+                  title: TextString.onboardingTitle3,
+                  subtitle: TextString.onboardingSubtitle3,
+                )
+              ]),
 
           //skip button
           skip(),
@@ -60,10 +66,18 @@ class onboarding_widgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image(
-            width: HelperFunction.screensize().width * .6,
-            height: HelperFunction.screensize().height * .8,
-            image: AssetImage(image)),
+        Padding(
+          padding: const EdgeInsets.only(top: 70),
+          child: Image(
+            width: HelperFunction.screensize().width * .9,
+            height: HelperFunction.screensize().height * .7,
+            image: AssetImage(image),
+            fit: BoxFit.fill,
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
         Text(
           title,
           style: Theme.of(context).textTheme.headlineMedium,
@@ -93,7 +107,14 @@ class skip extends StatelessWidget {
     return Positioned(
         top: 29,
         right: 24,
-        child: TextButton(onPressed: () {}, child: Text("skip")));
+        child: TextButton(
+            onPressed: () {
+              OnboardingController.intance.skippage();
+            },
+            child: Text(
+              "skip",
+              style: TextStyle(fontSize: 20, color: Colors.red),
+            )));
   }
 }
 
@@ -105,13 +126,17 @@ class circular_button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = HelperFunction.isdark(context);
     return Positioned(
         right: 29,
         bottom: 24,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                shape: CircleBorder(), iconColor: Colors.red),
-            onPressed: () {},
+                backgroundColor: dark ? Colors.white : Colors.black,
+                iconColor: Colors.red),
+            onPressed: () {
+              return OnboardingController.intance.nextpage();
+            },
             child: Icon(Icons.arrow_circle_right)));
   }
 }
@@ -124,12 +149,14 @@ class dot_button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controllar = OnboardingController.intance;
     final dark = HelperFunction.isdark(context);
     return Positioned(
         left: 35,
         bottom: 35,
         child: SmoothPageIndicator(
-          controller: PageController(),
+          controller: controllar.pageController,
+          onDotClicked: controllar.dotcount,
           count: 3,
           effect: ExpandingDotsEffect(
               activeDotColor: dark ? Colors.red : Colors.redAccent,

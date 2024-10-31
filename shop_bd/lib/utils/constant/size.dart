@@ -1,5 +1,3 @@
-
-
 class AppSizes {
   // Private constructor to prevent instantiation
   AppSizes._();
@@ -27,6 +25,11 @@ class AppSizes {
   static const double iconLarge = 32.0;
   static const double iconExtraLarge = 40.0;
 
+  //appbar size
+  static const double appbarsize = 56.0;
+  //defualt space
+  static const double defaultsize = 26;
+
   // Button Heights
   static const double buttonHeightSmall = 36.0;
   static const double buttonHeightMedium = 48.0;
@@ -37,9 +40,6 @@ class AppSizes {
   static const double borderRadiusMedium = 16.0;
   static const double borderRadiusLarge = 24.0;
 
-
   //default spacing
-   static const double spacebetweenitem = 16.0;
-
-
+  static const double spacebetweenitem = 16.0;
 }

@@ -67,12 +67,19 @@ class onboarding_widgets extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 70),
-          child: Image(
+          padding: const EdgeInsets.only(top: 80),
+          child: Container(
+            height: 500,
             width: HelperFunction.screensize().width * .9,
-            height: HelperFunction.screensize().height * .7,
-            image: AssetImage(image),
-            fit: BoxFit.fill,
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(100)),
+              child: Image(
+                width: HelperFunction.screensize().width * .9,
+                height: HelperFunction.screensize().height * .7,
+                image: AssetImage(image),
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
         ),
         SizedBox(

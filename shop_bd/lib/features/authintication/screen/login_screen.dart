@@ -94,6 +94,7 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
+                              style: ButtonStyle(),
                               onPressed: () {},
                               child: const Text(TextString.loginButton))),
                       SizedBox(
@@ -113,11 +114,13 @@ class LoginScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Divider(
-                      color: dark ? Colors.red : Colors.blue,
-                      thickness: 0.6,
-                      indent: 60,
-                      endIndent: 5,
+                    Flexible(
+                      child: Divider(
+                        color: dark ? Colors.red : Colors.blue,
+                        thickness: 0.6,
+                        indent: 60,
+                        endIndent: 5,
+                      ),
                     )
                   ],
                 )

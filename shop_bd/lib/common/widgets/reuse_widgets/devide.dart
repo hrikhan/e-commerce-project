@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class divider extends StatelessWidget {
+ class divider extends StatelessWidget {
   const divider({
     super.key,
     required this.dark,

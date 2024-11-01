@@ -7,7 +7,7 @@ class shopelevatedbutton {
       style: ElevatedButton.styleFrom(
           elevation: 0,
           foregroundColor: const Color.fromARGB(255, 239, 239, 239),
-          backgroundColor: const Color.fromARGB(202, 10, 10, 18),
+          backgroundColor: const Color.fromARGB(255, 3, 3, 71),
           textStyle: TextStyle(color: Colors.white)));
   static final dark = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

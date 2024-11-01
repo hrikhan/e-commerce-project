@@ -38,6 +38,7 @@ class TextString {
   static const String signUpPasswordHint = "Create a password";
   static const String signUpButton = "Sign Up";
   static const String signUpLoginPrompt = "Already have an account? Login";
+  static const String privacy = "privacy policy";
 
   // Home Page Texts
   static const String homeTitle = "Welcome Home!";

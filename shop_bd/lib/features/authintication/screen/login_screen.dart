@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:http/http.dart';
 
 import 'package:shop_bd/common/style/spacing_style.dart';
 import 'package:shop_bd/common/widgets/reuse_widgets/devide.dart';
+import 'package:shop_bd/common/widgets/reuse_widgets/gg_ff_auth_image.dart';
+import 'package:shop_bd/features/authintication/screen/sign_up/signup.dart';
 import 'package:shop_bd/utils/constant/image.dart';
 import 'package:shop_bd/utils/constant/size.dart';
 import 'package:shop_bd/utils/constant/text_string.dart';
@@ -15,6 +19,7 @@ class LoginScreen extends StatelessWidget {
     final dark = HelperFunction.isdark(context);
     return Scaffold(
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Padding(
           padding: SpacingStyle.paddingwithappbar_height,
           child: Padding(
@@ -88,50 +93,6 @@ class header_for_login extends StatelessWidget {
   }
 }
 
-class footer extends StatelessWidget {
-  const footer({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          height: 40,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: const Color.fromARGB(255, 90, 81, 81),
-            ),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: Image.asset(images.google),
-          ),
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Container(
-          height: 40,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: const Color.fromARGB(255, 90, 81, 81),
-            ),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: Image.asset(images.facebook),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 class form extends StatelessWidget {
   const form({
     super.key,
@@ -193,7 +154,10 @@ class form extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: OutlinedButton(
-                onPressed: () {}, child: const Text(TextString.createaccount)),
+                onPressed: () {
+                  Get.to(() => Signup());
+                },
+                child: const Text(TextString.createaccount)),
           ),
         ],
       ),

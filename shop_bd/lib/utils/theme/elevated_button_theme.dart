@@ -1,35 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Button_Theme {
-  static ElevatedButtonThemeData light = ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      foregroundColor: Colors.white, backgroundColor: Colors.blueAccent,    // Text color for light theme
-      minimumSize: const Size(double.infinity, 50), // Full-width button
-      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      textStyle: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-      ),
-      elevation: 4,
-    ),
-  );
+class shopelevatedbutton {
+  shopelevatedbutton._();
 
-  static ElevatedButtonThemeData dark = ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      foregroundColor: Colors.white, backgroundColor: Colors.grey[800],    // Text color for dark theme
-      minimumSize: const Size(double.infinity, 50), // Full-width button
-      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      textStyle: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-      ),
-      elevation: 4,
-    ),
-  );
+  static final light = ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+          elevation: 0,
+          foregroundColor: const Color.fromARGB(255, 239, 239, 239),
+          backgroundColor: const Color.fromARGB(202, 10, 10, 18),
+          textStyle: TextStyle(color: Colors.white)));
+  static final dark = ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+          elevation: 0,
+          foregroundColor: Colors.red,
+          backgroundColor: Colors.white,
+          textStyle: TextStyle(color: Colors.white)));
 }

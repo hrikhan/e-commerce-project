@@ -5,7 +5,9 @@ import 'package:http/http.dart';
 import 'package:shop_bd/common/style/spacing_style.dart';
 import 'package:shop_bd/common/widgets/reuse_widgets/devide.dart';
 import 'package:shop_bd/common/widgets/reuse_widgets/gg_ff_auth_image.dart';
+import 'package:shop_bd/features/authintication/screen/forget_password.dart';
 import 'package:shop_bd/features/authintication/screen/sign_up/signup.dart';
+import 'package:shop_bd/features/shop/screens/nevigation_menu.dart';
 import 'package:shop_bd/utils/constant/image.dart';
 import 'package:shop_bd/utils/constant/size.dart';
 import 'package:shop_bd/utils/constant/text_string.dart';
@@ -141,13 +143,19 @@ class form extends StatelessWidget {
               //forget
 
               TextButton(
-                  onPressed: () {}, child: Text(TextString.loginForgotPassword))
+                  onPressed: () {
+                    Get.to(() => ForgetPassword());
+                  },
+                  child: Text(TextString.loginForgotPassword))
             ],
           ),
           SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text(TextString.loginButton))),
+                  onPressed: () {
+                    Get.to(() => NevigationMenu());
+                  },
+                  child: const Text(TextString.loginButton))),
           SizedBox(
             height: AppSizes.marginMedium,
           ),

@@ -12,9 +12,14 @@ class SuccesfulMassage extends StatelessWidget {
       required this.image,
       required this.title,
       required this.sub,
-      this.onpressed});
+      this.onpressed,
+      this.textonpressed,
+      this.resend});
   final String image, title, sub;
   final VoidCallback? onpressed;
+  final VoidCallback? textonpressed;
+  final String? resend;
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +52,10 @@ class SuccesfulMassage extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Get.to(() => LoginScreen());
-                  },
+                  onPressed:onpressed,
                   child: Text("continue"),
-                ))
+                )),
+                TextButton(onPressed:textonpressed , child: Text("$resend"))
           ],
         )),
       ),
